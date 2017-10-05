@@ -46,6 +46,11 @@ view: order_items {
     sql: ${TABLE}.order_id ;;
   }
 
+  measure: total_sales_amount{
+    type:  sum
+    sql: ${sale_price};;
+  }
+
   dimension_group: returned {
     type: time
     timeframes: [
@@ -90,7 +95,7 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
-  measure: count {
+  measure: order_count {
     type: count
     drill_fields: [detail*]
   }

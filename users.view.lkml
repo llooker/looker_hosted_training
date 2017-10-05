@@ -20,8 +20,13 @@ view: users {
   dimension: age_tier {
     type: tier
     sql: ${age} ;;
+    style: integer
     tiers: [0,10,20,30,40,50,60,70,80]
+    label: "Age Tier"
+    description: "Ages bucketed"
   }
+
+
 
   dimension: city {
     type: string
@@ -56,6 +61,7 @@ view: users {
   dimension: first_name {
     type: string
     sql: ${TABLE}.first_name ;;
+    hidden: yes
   }
 
   dimension: gender {

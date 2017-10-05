@@ -7,6 +7,26 @@ view: order_items {
     sql: ${TABLE}.id ;;
   }
 
+  measure: total_sales_amount {
+    type: sum
+    sql: ${sale_price} ;;
+  }
+
+  measure: average_sales_amount {
+    type:  average
+    sql: ${sale_price} ;;
+  }
+
+  measure: count_of_orders {
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
+
+  measure: average_order_price {
+    type: number
+    sql: $total_sales_amount}/${count_of_orders} ;;
+  }
+
   dimension_group: created {
     type: time
     timeframes: [

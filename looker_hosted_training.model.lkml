@@ -34,3 +34,5 @@ include: "*.dashboard"
 # }
 
 explore: users {}
+
+explore: order_items {}
